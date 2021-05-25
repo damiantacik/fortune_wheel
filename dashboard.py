@@ -29,4 +29,21 @@ def get_random_sentence():
     return sentence
 
 
-print(get_random_sentence())
+def check_letter(sentence, letter):
+    counter = 0
+    special_chars = [" ", "?", "."]
+    for char in sentence:
+        if char.lower() == letter.lower() and letter not in special_chars:
+            counter += 1
+
+    return counter
+
+
+def show_sentences(sentence):
+    
+    converted_sentence = "".join([u"\u2593" if letter == " " else "_" for letter in sentence])
+    print(converted_sentence)
+
+
+s = get_random_sentence()["name"]
+show_sentences(s)
